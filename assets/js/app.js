@@ -15,7 +15,7 @@ firebase.initializeApp(firebaseConfig);
 let $main = $("#add-shit-here");
 let rockOutline = `<i class="far fa-hand-rock"></i>`;
 let rockSolid = `<i class="fas fa-hand-rock"></i>`;
-const centerJumbotron = function(html){
+const centerDiv = function createJumboTronInCenterOfWindow(html){
    return ` <div class="container h-100">
                 <div class="row align-items-center h-100">
                     <div class="col-6 mx-auto">
@@ -37,7 +37,7 @@ const startButton =  `
 </p>`;
 
 
-$main.html(centerJumbotron(startButton));
+$main.html(centerDiv(startButton));
 
 //Start Button Clicked => Select Character Page
 
@@ -59,9 +59,9 @@ $("#start").on("click", function () {
     let users = localStorage.getItem('Users');
     console.log(users)
     if (!users) {
-        $main.html(centerJumbotron(createNewChar))
+        $main.html(centerDiv(createNewChar))
     } else {
-        $main.html(centerJumbotron(welcomeBack))
+        $main.html(centerDiv(welcomeBack))
 
     }
 })
